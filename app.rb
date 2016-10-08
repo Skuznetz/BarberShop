@@ -29,19 +29,19 @@ hh = {:username =>'Введите имя',
 	:datetime =>'Введите дату и время'}
 
 # для каждой пары ключ-значение	
-hh.each do |key, value|
+#hh.each do |key, value|
    
    # если параметр пуст
-   if params[key] == ''
+   #if params[key] == ''
    	# переменной error присвоить value из хэша hh
    	# (а value из хэша hh -это сообщение об ошибке)
    	# т.е. переменной error присвоить сообщение о ошибке
-   	@error = hh[key]
-# @error = hh.select {|key,_| params[key] == ""} .values.join(", ")
-  #if @error!=''  
+   	#@error = hh[key]
+ @error = hh.select {|key,_| params[key] == ""} .values.join(", ")
+  if @error!=''  
     return erb :visit
 
-   end
+   #end
 
 end
 	

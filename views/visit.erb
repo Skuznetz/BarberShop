@@ -23,11 +23,11 @@
     <label>Ваш парикмаххер</label>
     
 <select name="barber" class="form-control "> # name добавляем сами
-  <option>Иван</option>
-  <option>Катя</option>
-  <option>Лида</option>
-  <option>Елена</option>
-  <option>Вася</option>
+  <option <%=@barber =='Иван'? 'selected' : '' %>>Иван</option>
+  <option <%=@barber =='Катя'? 'selected' : '' %>>Катя</option>
+  <option <%=@barber=='Лида'? 'selected' : '' %>>Лида</option>
+  <option <%=@barber=='Елена'? 'selected' : '' %>>Елена</option>
+  <option <%=@barber=='Вася'? 'selected' : '' %>>Вася</option>
 </select>
   </div>
 
