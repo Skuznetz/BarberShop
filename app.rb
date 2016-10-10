@@ -55,10 +55,25 @@ hh = {:username =>'Введите имя',
  @error = hh.select {|key,_| params[key] == ""} .values.join(", ")
   if @error!=''  
     return erb :visit
+    #end
+   end
+  # db = get_db
+  db = SQLite3::Database.new 'barbershop.db'
+    db.execute 'insert into
+        Users
+        (
+            username,
+            phone,
+            datestamp,
+            barber,
+            color
+        )
+        values (?, ?, ?, ?, ?)', [@username, @phone, @datetime, @barber, @color]
 
-   #end
 
-end
-	
 	erb "OK,username is #{@username},#{@phone},#{@datetime},#{@barber},#{@color}"
 end
+
+# def get_db
+#    return SQLite3::Database.new 'barbershop.db'
+#   end
