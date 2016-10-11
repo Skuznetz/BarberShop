@@ -59,6 +59,7 @@ hh = {:username =>'Введите имя',
    end
   # db = get_db
   db = SQLite3::Database.new 'barbershop.db'
+  db.results_as_hash = true
     db.execute 'insert into
         Users
         (
@@ -73,7 +74,9 @@ hh = {:username =>'Введите имя',
 
 	erb "OK,username is #{@username},#{@phone},#{@datetime},#{@barber},#{@color}"
 end
-
+get '/showusers' do
+  erb "Hello World"
+end
 # def get_db
 #    return SQLite3::Database.new 'barbershop.db'
 #   end
